@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الشكاوى والاقتراحات | نظام TEKFEN للموارد البشرية</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index_ar.html">
+                <img src="images/tekfen.jpg" alt="TEKFEN Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index_ar.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="company_history_ar.html">تاريخ الشركة</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="attendanceDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الحضور والغياب
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="attendanceDropdown">
+                            <li><a class="dropdown-item" href="attendance_ar.html">سجل الحضور</a></li>
+                            <li><a class="dropdown-item" href="attendance_admin_ar.html">إدارة الحضور والغياب</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="leavesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الإجازات والاستئذان
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="leavesDropdown">
+                            <li><a class="dropdown-item" href="leaves_ar.html">طلبات الإجازة</a></li>
+                            <li><a class="dropdown-item" href="permissions_ar.html">طلبات الاستئذان</a></li>
+                            <li><a class="dropdown-item" href="leaves_admin_ar.html">إدارة طلبات الإجازة</a></li>
+                            <li><a class="dropdown-item" href="permissions_admin_ar.html">إدارة طلبات الاستئذان</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الخدمات
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item active" href="complaints_ar.html">الشكاوى والاقتراحات</a></li>
+                            <li><a class="dropdown-item" href="salary_certificate_ar.html">تعريف الراتب</a></li>
+                            <li><a class="dropdown-item" href="documents_ar.html">إدارة المستندات</a></li>
+                            <li><a class="dropdown-item" href="training_ar.html">التدريب والتطوير</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="announcements_ar.html">الإعلانات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="messages_ar.html">
+                            الرسائل
+                            <span class="badge bg-danger">3</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin_dashboard_ar.html">لوحة التحكم</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> <span id="user-name">اسم المستخدم</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="profile_ar.html">الملف الشخصي</a></li>
+                            <li><a class="dropdown-item" href="change_password_ar.html">تغيير كلمة المرور</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" onclick="logout()">تسجيل الخروج</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-globe"></i>
+                            العربية
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item active" href="#" onclick="changeLanguage('ar')">العربية</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="changeLanguage('en')">English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- المحتوى الرئيسي -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card">
+                    <div class="card-header">
+                        <h4><i class="bi bi-chat-dots"></i> الشكاوى والاقتراحات</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- أزرار الإجراءات -->
+                        <div class="d-flex justify-content-end mb-4">
+                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newComplaintModal">
+                                <i class="bi bi-plus-circle"></i> تقديم شكوى/اقتراح جديد
+                            </a>
+                        </div>
+                        
+                        <!-- جدول الشكاوى والاقتراحات -->
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>الموضوع</th>
+                                        <th>النوع</th>
+                                        <th>تاريخ التقديم</th>
+                                        <th>الحالة</th>
+                                        <th>الإجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>اقتراح لتحسين بيئة العمل</td>
+                                        <td>اقتراح</td>
+                                        <td>20/05/2025</td>
+                                        <td><span class="badge bg-warning">قيد المراجعة</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#complaintDetailsModal">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>مشكلة في نظام تكييف الهواء</td>
+                                        <td>شكوى</td>
+                                        <td>15/05/2025</td>
+                                        <td><span class="badge bg-success">تم الحل</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#complaintDetailsModal">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>اقتراح لتنظيم فعالية اجتماعية</td>
+                                        <td>اقتراح</td>
+                                        <td>10/05/2025</td>
+                                        <td><span class="badge bg-success">مقبول</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#complaintDetailsModal">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>مشكلة في مواقف السيارات</td>
+                                        <td>شكوى</td>
+                                        <td>05/05/2025</td>
+                                        <td><span class="badge bg-danger">مرفوض</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#complaintDetailsModal">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <!-- إرشادات تقديم الشكاوى والاقتراحات -->
+                        <div class="card mt-4">
+                            <div class="card-header">
+                                <h5>إرشادات تقديم الشكاوى والاقتراحات</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>يرجى تقديم وصف دقيق وواضح للشكوى أو الاقتراح.</li>
+                                    <li>يمكنك متابعة حالة الشكوى أو الاقتراح من خلال الجدول أعلاه.</li>
+                                    <li>سيتم الرد على الشكاوى والاقتراحات خلال 3 أيام عمل.</li>
+                                    <li>في حالة وجود أي استفسارات، يرجى التواصل مع قسم الموارد البشرية.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- نافذة تقديم شكوى/اقتراح جديد -->
+    <div class="modal fade" id="newComplaintModal" tabindex="-1" aria-labelledby="newComplaintModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="newComplaintModalLabel">تقديم شكوى/اقتراح جديد</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form onsubmit="submitComplaint(event)">
+                        <div class="mb-3">
+                            <label for="complaint-subject" class="form-label">الموضوع</label>
+                            <input type="text" class="form-control" id="complaint-subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="complaint-type" class="form-label">النوع</label>
+                            <select class="form-select" id="complaint-type" required>
+                                <option value="">اختر النوع</option>
+                                <option value="complaint">شكوى</option>
+                                <option value="suggestion">اقتراح</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="complaint-content" class="form-label">المحتوى</label>
+                            <textarea class="form-control" id="complaint-content" rows="5" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="complaint-attachment" class="form-label">المرفقات (اختياري)</label>
+                            <input type="file" class="form-control" id="complaint-attachment">
+                        </div>
+                        <div class="text-end">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                            <button type="submit" class="btn btn-primary">تقديم</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- نافذة تفاصيل الشكوى/الاقتراح -->
+    <div class="modal fade" id="complaintDetailsModal" tabindex="-1" aria-labelledby="complaintDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="complaintDetailsModalLabel">تفاصيل الشكوى/الاقتراح</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">الموضوع</label>
+                                <input type="text" class="form-control" value="اقتراح لتحسين بيئة العمل" readonly>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">النوع</label>
+                                <input type="text" class="form-control" value="اقتراح" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">تاريخ التقديم</label>
+                                <input type="text" class="form-control" value="20/05/2025" readonly>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">الحالة</label>
+                                <input type="text" class="form-control" value="قيد المراجعة" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">المحتوى</label>
+                        <textarea class="form-control" rows="5" readonly>أقترح تحسين بيئة العمل من خلال إضافة مساحات خضراء في المكتب وتوفير استراحات قصيرة للموظفين خلال اليوم لتحسين الإنتاجية والصحة النفسية.</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">رد الإدارة</label>
+                        <textarea class="form-control" rows="3" readonly>شكراً على اقتراحك القيم. نحن نقوم حالياً بدراسة الاقتراح وسنقوم بالرد قريباً.</textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إغلاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- الذيل -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p>&copy; 2025 TEKFEN. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p>نظام TEKFEN للموارد البشرية</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

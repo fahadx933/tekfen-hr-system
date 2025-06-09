@@ -1,0 +1,661 @@
+:root {
+    --primary-color: #003478;
+    --secondary-color: #ffffff;
+    --accent-color: #0056b3;
+    --light-bg: #f8f9fa;
+    --dark-bg: #343a40;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* شريط التنقل */
+.navbar {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand img {
+    height: 40px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+    color: #ffffff;
+}
+
+.navbar-dark .navbar-nav .active > .nav-link,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* القسم الرئيسي */
+.hero-section {
+    padding: 80px 0;
+    background-color: var(--light-bg);
+    border-bottom: 1px solid #e9ecef;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* الإحصائيات السريعة */
+.quick-stats .card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.quick-stats .card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+/* قسم تسجيل الحضور والانصراف */
+.attendance-section .card {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.current-time-display {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.current-time-display h2 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+/* قسم الميزات */
+.features-section {
+    background-color: #ffffff;
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #6c757d;
+    margin-bottom: 30px;
+}
+
+.feature-card {
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* قسم الإعلانات الأخيرة */
+.recent-announcements .card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.recent-announcements .card:hover {
+    transform: translateY(-5px);
+}
+
+/* قسم الروابط السريعة */
+.quick-link-card {
+    display: block;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #333;
+    text-decoration: none;
+}
+
+.quick-link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.quick-link-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* الذيل */
+.footer {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 40px 0 20px;
+}
+
+.footer h5 {
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-link {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+.footer-divider {
+    border-color: rgba(255, 255, 255, 0.1);
+    margin: 20px 0;
+}
+
+/* صفحة تسجيل الدخول */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+
+.login-card {
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.login-header {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+.login-body {
+    padding: 30px;
+}
+
+.login-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* صفحة الحضور والغياب */
+.attendance-table th, .attendance-table td {
+    vertical-align: middle;
+}
+
+.attendance-status-badge {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+}
+
+.attendance-chart-container {
+    height: 300px;
+    margin-bottom: 30px;
+}
+
+/* صفحة الإجازات */
+.leave-status-badge {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+}
+
+.leave-calendar {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+}
+
+/* صفحة الشكاوى والاقتراحات */
+.complaint-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.complaint-card:hover {
+    transform: translateY(-5px);
+}
+
+/* صفحة المراسلات */
+.message-list {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.message-item {
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #f8f9fa;
+}
+
+.message-item.unread {
+    background-color: #e8f4ff;
+    border-left: 4px solid var(--primary-color);
+}
+
+.message-item.sent {
+    background-color: #f0f7f0;
+    border-right: 4px solid var(--success-color);
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.message-content {
+    margin-bottom: 10px;
+}
+
+/* صفحة الملف الشخصي */
+.profile-image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.profile-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+.profile-image-container:hover .profile-image-overlay {
+    height: 50%;
+}
+
+/* تصميم متجاوب */
+@media (max-width: 767.98px) {
+    .hero-section {
+        padding: 40px 0;
+    }
+    
+    .current-time-display h2 {
+        font-size: 2rem;
+    }
+    
+    .feature-card, .quick-link-card {
+        margin-bottom: 20px;
+    }
+}
+
+/* تخصيص لوحة التحكم */
+.dashboard-stats .card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.dashboard-stats .card:hover {
+    transform: translateY(-5px);
+}
+
+.dashboard-chart-container {
+    height: 300px;
+    margin-bottom: 30px;
+}
+
+/* تخصيص الجداول */
+.custom-table {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.custom-table thead {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.custom-table th, .custom-table td {
+    vertical-align: middle;
+}
+
+/* تخصيص النماذج */
+.custom-form-label {
+    font-weight: 600;
+}
+
+.custom-form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 52, 120, 0.25);
+}
+
+/* تخصيص الأزرار */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #002a5e;
+    border-color: #002a5e;
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:focus {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* تخصيص البطاقات */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    font-weight: bold;
+}
+
+/* تخصيص التنبيهات */
+.alert {
+    border-radius: 10px;
+}
+
+/* تخصيص شريط التقدم */
+.progress {
+    height: 10px;
+    border-radius: 5px;
+}
+
+/* تخصيص الشارات */
+.badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+/* تخصيص الأيقونات */
+.bi {
+    vertical-align: middle;
+}
+
+/* تخصيص التبويبات */
+.nav-tabs .nav-link {
+    border: none;
+    color: #6c757d;
+    padding: 10px 15px;
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    font-weight: bold;
+}
+
+.tab-content {
+    padding: 20px 0;
+}
+
+/* تخصيص القوائم المنسدلة */
+.dropdown-menu {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    background-color: var(--primary-color);
+}
+
+/* تخصيص الصفحات */
+.page-container {
+    padding: 20px 0;
+}
+
+.page-title {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* تخصيص الأقسام */
+.section {
+    padding: 40px 0;
+}
+
+.section-light {
+    background-color: #ffffff;
+}
+
+.section-dark {
+    background-color: var(--light-bg);
+}
+
+/* تخصيص الصور */
+.img-thumbnail {
+    border-radius: 10px;
+}
+
+/* تخصيص الروابط */
+a {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #002a5e;
+    text-decoration: none;
+}
+
+/* تخصيص الأحداث */
+.event-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-date {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px 0 0 10px;
+}
+
+.event-day {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.event-month {
+    font-size: 0.9rem;
+}
+
+/* تخصيص الإشعارات */
+.notification-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 3px 6px;
+    border-radius: 50%;
+    background-color: var(--danger-color);
+    color: white;
+    font-size: 0.7rem;
+}
+
+/* تخصيص صفحة تاريخ الشركة */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--primary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border: 4px solid var(--primary-color);
+    border-radius: 50%;
+    top: 15px;
+    z-index: 1;
+}
+
+.timeline-item.left {
+    left: 0;
+}
+
+.timeline-item.right {
+    left: 50%;
+}
+
+.timeline-item.left::after {
+    right: -10px;
+}
+
+.timeline-item.right::after {
+    left: -10px;
+}
+
+.timeline-content {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-year {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+@media (max-width: 767.98px) {
+    .timeline::before {
+        left: 40px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 20px;
+    }
+    
+    .timeline-item.left, .timeline-item.right {
+        left: 0;
+    }
+    
+    .timeline-item.left::after, .timeline-item.right::after {
+        left: 30px;
+    }
+}

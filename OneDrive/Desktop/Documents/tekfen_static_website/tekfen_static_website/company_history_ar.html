@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تاريخ شركة TEKFEN | نظام TEKFEN للموارد البشرية</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index_ar.html">
+                <img src="images/tekfen.jpg" alt="TEKFEN Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index_ar.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="company_history_ar.html">تاريخ الشركة</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="attendanceDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الحضور والغياب
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="attendanceDropdown">
+                            <li><a class="dropdown-item" href="attendance_ar.html">سجل الحضور</a></li>
+                            <li><a class="dropdown-item" href="attendance_admin_ar.html">إدارة الحضور والغياب</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="leavesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الإجازات والاستئذان
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="leavesDropdown">
+                            <li><a class="dropdown-item" href="leaves_ar.html">طلبات الإجازة</a></li>
+                            <li><a class="dropdown-item" href="permissions_ar.html">طلبات الاستئذان</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الخدمات
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="complaints_ar.html">الشكاوى والاقتراحات</a></li>
+                            <li><a class="dropdown-item" href="salary_certificate_ar.html">تعريف الراتب</a></li>
+                            <li><a class="dropdown-item" href="documents_ar.html">إدارة المستندات</a></li>
+                            <li><a class="dropdown-item" href="training_ar.html">التدريب والتطوير</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="announcements_ar.html">الإعلانات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="messages_ar.html">
+                            الرسائل
+                            <span class="badge bg-danger">3</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> <span id="user-name">أحمد محمد</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="profile_ar.html">الملف الشخصي</a></li>
+                            <li><a class="dropdown-item" href="change_password_ar.html">تغيير كلمة المرور</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" onclick="logout()">تسجيل الخروج</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-globe"></i>
+                            العربية
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item active" href="#" onclick="changeLanguage('ar')">العربية</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="changeLanguage('en')">English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- المحتوى الرئيسي -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4><i class="bi bi-clock-history"></i> تاريخ شركة TEKFEN</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center mb-4">
+                            <img src="images/tekfen.jpg" alt="TEKFEN Logo" class="img-fluid" style="max-width: 300px;">
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h5 class="text-primary">التأسيس والبدايات</h5>
+                                <p>
+                                    تأسست شركة TEKFEN في عام 1956 من قبل ثلاثة مهندسين شباب هم فيضي أكوتشلار، نيهات جوكيجيت، ونجاتي أكوتشلار. بدأت الشركة كمكتب استشاري هندسي صغير في اسطنبول، تركيا، تحت اسم "Tekfen Construction & Installation Co., Inc."، وكان هدفها تقديم خدمات هندسية عالية الجودة.
+                                </p>
+                                <p>
+                                    اشتق اسم "TEKFEN" من الكلمات التركية "Teknoloji" (تكنولوجيا) و "Fenni" (علمي)، مما يعكس التزام الشركة بالتميز التكنولوجي والعلمي منذ بدايتها.
+                                </p>
+                                
+                                <h5 class="text-primary mt-4">النمو والتوسع</h5>
+                                <p>
+                                    في الستينيات، بدأت TEKFEN في توسيع نطاق عملياتها خارج تركيا، حيث دخلت في مشاريع في الشرق الأوسط. كان أحد المشاريع الرئيسية المبكرة هو خط أنابيب النفط العراقي-التركي، الذي أكمل في عام 1976.
+                                </p>
+                                <p>
+                                    خلال السبعينيات والثمانينيات، نمت الشركة بشكل كبير وتنوعت أعمالها لتشمل الزراعة والتصنيع والعقارات، بالإضافة إلى أعمال البناء الأساسية. في عام 1986، تم تأسيس مجموعة TEKFEN القابضة لإدارة الشركات المتنوعة المتزايدة.
+                                </p>
+                                
+                                <h5 class="text-primary mt-4">التحول إلى شركة عالمية</h5>
+                                <p>
+                                    في التسعينيات، أصبحت TEKFEN شركة عالمية حقيقية، مع مشاريع في أكثر من 20 دولة عبر أوروبا وآسيا وأفريقيا والشرق الأوسط. في عام 2007، أصبحت TEKFEN شركة مساهمة عامة مدرجة في بورصة اسطنبول.
+                                </p>
+                                <p>
+                                    اليوم، تعتبر مجموعة TEKFEN واحدة من أكبر الشركات في تركيا وتعمل في ثلاثة قطاعات رئيسية:
+                                </p>
+                                <ul>
+                                    <li><strong>المقاولات:</strong> تنفيذ مشاريع البنية التحتية الكبرى، بما في ذلك الطرق والجسور والمطارات وخطوط الأنابيب والمنشآت الصناعية.</li>
+                                    <li><strong>الزراعة:</strong> إنتاج وتوزيع الأسمدة والبذور والمنتجات الزراعية الأخرى.</li>
+                                    <li><strong>العقارات:</strong> تطوير وإدارة المشاريع العقارية التجارية والسكنية.</li>
+                                </ul>
+                                
+                                <h5 class="text-primary mt-4">المشاريع البارزة</h5>
+                                <p>
+                                    على مر السنين، أكملت TEKFEN العديد من المشاريع البارزة، بما في ذلك:
+                                </p>
+                                <ul>
+                                    <li>خط أنابيب باكو-تبليسي-جيهان (BTC) - أحد أطول خطوط أنابيب النفط في العالم</li>
+                                    <li>مطار باكو الدولي في أذربيجان</li>
+                                    <li>جسر البوسفور الثالث (جسر ياووز سلطان سليم) في اسطنبول</li>
+                                    <li>مشروع الغاز الطبيعي شاه دنيز 2 في أذربيجان</li>
+                                    <li>العديد من المشاريع النفطية والغازية في الشرق الأوسط وشمال أفريقيا</li>
+                                </ul>
+                                
+                                <h5 class="text-primary mt-4">القيم والمسؤولية الاجتماعية</h5>
+                                <p>
+                                    تلتزم TEKFEN بقيم الجودة والسلامة والاستدامة والمسؤولية الاجتماعية. أسست الشركة مؤسسة TEKFEN للأعمال الخيرية في عام 1999، والتي تدعم التعليم والفنون والثقافة والبيئة.
+                                </p>
+                                <p>
+                                    تفتخر الشركة بسجلها في مجال السلامة والبيئة، وقد حصلت على العديد من الجوائز والشهادات الدولية لالتزامها بأعلى المعايير.
+                                </p>
+                                
+                                <h5 class="text-primary mt-4">TEKFEN اليوم</h5>
+                                <p>
+                                    اليوم، توظف مجموعة TEKFEN أكثر من 20,000 شخص حول العالم وتعمل في عشرات البلدان. تستمر الشركة في النمو والابتكار، مع التركيز على الاستدامة والتكنولوجيا المتقدمة.
+                                </p>
+                                <p>
+                                    تعتبر TEKFEN مثالاً على قصة نجاح تركية، حيث تحولت من شركة صغيرة إلى مجموعة عالمية رائدة في مجالها، مع الحفاظ على قيمها الأساسية والتزامها بالتميز.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- الجدول الزمني -->
+                        <div class="mt-5">
+                            <h5 class="text-primary">الجدول الزمني لتاريخ TEKFEN</h5>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-date">1956</div>
+                                    <div class="timeline-content">
+                                        <h6>تأسيس الشركة</h6>
+                                        <p>تأسست شركة TEKFEN من قبل فيضي أكوتشلار، نيهات جوكيجيت، ونجاتي أكوتشلار كمكتب استشاري هندسي في اسطنبول.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">1960s</div>
+                                    <div class="timeline-content">
+                                        <h6>التوسع الدولي الأول</h6>
+                                        <p>بدأت TEKFEN في توسيع عملياتها خارج تركيا، مع التركيز على مشاريع في الشرق الأوسط.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">1976</div>
+                                    <div class="timeline-content">
+                                        <h6>خط أنابيب النفط العراقي-التركي</h6>
+                                        <p>أكملت TEKFEN أحد مشاريعها الرئيسية المبكرة، وهو خط أنابيب النفط العراقي-التركي.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">1986</div>
+                                    <div class="timeline-content">
+                                        <h6>تأسيس مجموعة TEKFEN القابضة</h6>
+                                        <p>تم تأسيس مجموعة TEKFEN القابضة لإدارة الشركات المتنوعة المتزايدة.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">1990s</div>
+                                    <div class="timeline-content">
+                                        <h6>التوسع العالمي</h6>
+                                        <p>أصبحت TEKFEN شركة عالمية حقيقية، مع مشاريع في أكثر من 20 دولة عبر أوروبا وآسيا وأفريقيا والشرق الأوسط.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">1999</div>
+                                    <div class="timeline-content">
+                                        <h6>تأسيس مؤسسة TEKFEN للأعمال الخيرية</h6>
+                                        <p>تم تأسيس مؤسسة TEKFEN للأعمال الخيرية لدعم التعليم والفنون والثقافة والبيئة.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">2007</div>
+                                    <div class="timeline-content">
+                                        <h6>الإدراج في البورصة</h6>
+                                        <p>أصبحت TEKFEN شركة مساهمة عامة مدرجة في بورصة اسطنبول.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">2005-2006</div>
+                                    <div class="timeline-content">
+                                        <h6>خط أنابيب باكو-تبليسي-جيهان</h6>
+                                        <p>أكملت TEKFEN أحد أهم مشاريعها، وهو خط أنابيب باكو-تبليسي-جيهان (BTC).</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">2016</div>
+                                    <div class="timeline-content">
+                                        <h6>جسر البوسفور الثالث</h6>
+                                        <p>شاركت TEKFEN في بناء جسر البوسفور الثالث (جسر ياووز سلطان سليم) في اسطنبول.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">2025</div>
+                                    <div class="timeline-content">
+                                        <h6>TEKFEN اليوم</h6>
+                                        <p>توظف مجموعة TEKFEN أكثر من 20,000 شخص حول العالم وتعمل في عشرات البلدان، مع التركيز على الاستدامة والتكنولوجيا المتقدمة.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- الذيل -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p>&copy; 2025 TEKFEN. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p>نظام TEKFEN للموارد البشرية</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

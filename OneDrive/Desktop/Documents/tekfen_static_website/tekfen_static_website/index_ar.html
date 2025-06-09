@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الصفحة الرئيسية | نظام TEKFEN للموارد البشرية</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index_ar.html">
+                <img src="images/tekfen.jpg" alt="TEKFEN Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index_ar.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="company_history_ar.html">تاريخ الشركة</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="attendanceDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الحضور والغياب
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="attendanceDropdown">
+                            <li><a class="dropdown-item" href="attendance_ar.html">سجل الحضور</a></li>
+                            <li><a class="dropdown-item" href="attendance_admin_ar.html">إدارة الحضور والغياب</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="leavesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الإجازات والاستئذان
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="leavesDropdown">
+                            <li><a class="dropdown-item" href="leaves_ar.html">طلبات الإجازة</a></li>
+                            <li><a class="dropdown-item" href="permissions_ar.html">طلبات الاستئذان</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الخدمات
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="complaints_ar.html">الشكاوى والاقتراحات</a></li>
+                            <li><a class="dropdown-item" href="salary_certificate_ar.html">تعريف الراتب</a></li>
+                            <li><a class="dropdown-item" href="documents_ar.html">إدارة المستندات</a></li>
+                            <li><a class="dropdown-item" href="training_ar.html">التدريب والتطوير</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="announcements_ar.html">الإعلانات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="messages_ar.html">
+                            الرسائل
+                            <span class="badge bg-danger">3</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> <span id="user-name">أحمد محمد</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="profile_ar.html">الملف الشخصي</a></li>
+                            <li><a class="dropdown-item" href="change_password_ar.html">تغيير كلمة المرور</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" onclick="logout()">تسجيل الخروج</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-globe"></i>
+                            العربية
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item active" href="#" onclick="changeLanguage('ar')">العربية</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="changeLanguage('en')">English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- القسم الرئيسي -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold">مرحباً بك في نظام TEKFEN للموارد البشرية</h1>
+                    <p class="lead">منصة متكاملة لإدارة شؤون الموظفين وتسهيل التواصل بين أقسام الشركة</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
+                        <a href="#features" class="btn btn-primary btn-lg px-4 me-md-2">استكشف الميزات</a>
+                        <a href="company_history_ar.html" class="btn btn-outline-secondary btn-lg px-4">تعرف على TEKFEN</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <img src="images/tekfen.jpg" alt="TEKFEN Logo" class="img-fluid hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم الإحصائيات السريعة -->
+    <section class="quick-stats py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <div class="stat-icon mb-3">
+                                <i class="bi bi-calendar-check text-primary"></i>
+                            </div>
+                            <h5 class="card-title">حالة الحضور</h5>
+                            <p class="card-text">
+                                <span class="badge bg-success">حاضر</span>
+                            </p>
+                            <p class="text-muted small">آخر تسجيل: اليوم 08:05 صباحاً</p>
+                            <a href="attendance_ar.html" class="btn btn-sm btn-outline-primary">تفاصيل الحضور</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <div class="stat-icon mb-3">
+                                <i class="bi bi-calendar2-week text-primary"></i>
+                            </div>
+                            <h5 class="card-title">رصيد الإجازات</h5>
+                            <p class="card-text">
+                                <span class="fw-bold">21</span> يوم
+                            </p>
+                            <p class="text-muted small">آخر إجازة: 10-15 أبريل 2025</p>
+                            <a href="leaves_ar.html" class="btn btn-sm btn-outline-primary">طلب إجازة</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <div class="stat-icon mb-3">
+                                <i class="bi bi-envelope text-primary"></i>
+                            </div>
+                            <h5 class="card-title">الرسائل الجديدة</h5>
+                            <p class="card-text">
+                                <span class="fw-bold">3</span> رسائل غير مقروءة
+                            </p>
+                            <p class="text-muted small">آخر رسالة: منذ 30 دقيقة</p>
+                            <a href="messages_ar.html" class="btn btn-sm btn-outline-primary">عرض الرسائل</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body">
+                            <div class="stat-icon mb-3">
+                                <i class="bi bi-megaphone text-primary"></i>
+                            </div>
+                            <h5 class="card-title">إعلانات جديدة</h5>
+                            <p class="card-text">
+                                <span class="fw-bold">2</span> إعلانات جديدة
+                            </p>
+                            <p class="text-muted small">آخر إعلان: اليوم 09:30 صباحاً</p>
+                            <a href="announcements_ar.html" class="btn btn-sm btn-outline-primary">عرض الإعلانات</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم تسجيل الحضور والانصراف -->
+    <section class="attendance-section py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="mb-0"><i class="bi bi-clock"></i> تسجيل الحضور والانصراف</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-6 text-center mb-3 mb-md-0">
+                                    <div class="current-time-display">
+                                        <h2 id="current-time">08:30:45</h2>
+                                        <p id="current-date">الاثنين، 26 مايو 2025</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-grid gap-3">
+                                        <button class="btn btn-success btn-lg" onclick="checkIn()">
+                                            <i class="bi bi-box-arrow-in-right"></i> تسجيل الحضور
+                                        </button>
+                                        <button class="btn btn-danger btn-lg" onclick="checkOut()">
+                                            <i class="bi bi-box-arrow-left"></i> تسجيل الانصراف
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="attendance-status mt-4">
+                                <div class="alert alert-success" role="alert">
+                                    <i class="bi bi-info-circle"></i> تم تسجيل حضورك اليوم في الساعة 08:05 صباحاً
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم الميزات -->
+    <section id="features" class="features-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">ميزات النظام</h2>
+                <p class="section-subtitle">اكتشف الميزات المتكاملة التي يقدمها نظام TEKFEN للموارد البشرية</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon">
+                            <i class="bi bi-calendar-check"></i>
+                        </div>
+                        <h4>الحضور والغياب</h4>
+                        <p>تسجيل الحضور والانصراف بسهولة، مع إمكانية عرض سجل الحضور الشهري والتقارير التفصيلية.</p>
+                        <a href="attendance_ar.html" class="btn btn-sm btn-primary mt-auto">استخدم الميزة</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon">
+                            <i class="bi bi-calendar2-week"></i>
+                        </div>
+                        <h4>الإجازات والاستئذان</h4>
+                        <p>تقديم طلبات الإجازة والاستئذان ومتابعة حالتها، مع عرض رصيد الإجازات المتبقي.</p>
+                        <a href="leaves_ar.html" class="btn btn-sm btn-primary mt-auto">استخدم الميزة</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon">
+                            <i class="bi bi-chat-dots"></i>
+                        </div>
+                        <h4>الشكاوى والاقتراحات</h4>
+                        <p>تقديم الشكاوى والاقتراحات بسرية تامة، مع إمكانية متابعة حالة الطلب والرد عليه.</p>
+                        <a href="complaints_ar.html" class="btn btn-sm btn-primary mt-auto">استخدم الميزة</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon">
+                            <i class="bi bi-file-earmark-text"></i>
+                        </div>
+                        <h4>تعريف الراتب</h4>
+                        <p>طلب تعريف الراتب وطباعته بصيغة PDF، مع إمكانية تخصيص المعلومات المطلوبة.</p>
+                        <a href="salary_certificate_ar.html" class="btn btn-sm btn-primary mt-auto">استخدم الميزة</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon">
+                            <i class="bi bi-folder2-open"></i>
+                        </div>
+                        <h4>إدارة المستندات</h4>
+                        <p>رفع وتنظيم المستندات الشخصية والوثائق الرسمية، مع إمكانية الوصول إليها في أي وقت.</p>
+                        <a href="documents_ar.html" class="btn btn-sm btn-primary mt-auto">استخدم الميزة</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon">
+                            <i class="bi bi-mortarboard"></i>
+                        </div>
+                        <h4>التدريب والتطوير</h4>
+                        <p>الاطلاع على الدورات التدريبية المتاحة والتسجيل فيها، مع متابعة التقدم في المسار التدريبي.</p>
+                        <a href="training_ar.html" class="btn btn-sm btn-primary mt-auto">استخدم الميزة</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon">
+                            <i class="bi bi-megaphone"></i>
+                        </div>
+                        <h4>الإعلانات الداخلية</h4>
+                        <p>الاطلاع على أحدث الإعلانات والأخبار الداخلية للشركة، مع إمكانية البحث في الأرشيف.</p>
+                        <a href="announcements_ar.html" class="btn btn-sm btn-primary mt-auto">استخدم الميزة</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <h4>المراسلات الداخلية</h4>
+                        <p>التواصل مع الزملاء والمدراء من خلال نظام المراسلات الداخلية، مع إمكانية إرفاق الملفات.</p>
+                        <a href="messages_ar.html" class="btn btn-sm btn-primary mt-auto">استخدم الميزة</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon">
+                            <i class="bi bi-clock-history"></i>
+                        </div>
+                        <h4>تاريخ الشركة</h4>
+                        <p>تعرف على تاريخ شركة TEKFEN ومراحل تطورها منذ التأسيس وحتى الآن.</p>
+                        <a href="company_history_ar.html" class="btn btn-sm btn-primary mt-auto">استخدم الميزة</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم الإعلانات الأخيرة -->
+    <section class="recent-announcements py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="section-title">أحدث الإعلانات</h2>
+                <p class="section-subtitle">آخر الإعلانات والأخبار الداخلية للشركة</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge bg-primary">إعلان رسمي</span>
+                                <small class="text-muted">26 مايو 2025</small>
+                            </div>
+                            <h5 class="card-title">اجتماع مجلس الإدارة الربع سنوي</h5>
+                            <p class="card-text">سيعقد اجتماع مجلس الإدارة الربع سنوي يوم الخميس القادم الموافق 29 مايو 2025 في قاعة الاجتماعات الرئيسية. يرجى من جميع المدراء تجهيز تقاريرهم الربعية.</p>
+                            <a href="announcements_ar.html" class="btn btn-sm btn-outline-primary">قراءة المزيد</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge bg-success">فعالية</span>
+                                <small class="text-muted">25 مايو 2025</small>
+                            </div>
+                            <h5 class="card-title">يوم الصحة والسلامة المهنية</h5>
+                            <p class="card-text">ستقيم الشركة يوم الصحة والسلامة المهنية السنوي يوم الأحد القادم الموافق 1 يونيو 2025. سيتضمن البرنامج ورش عمل وفعاليات توعوية حول السلامة في بيئة العمل.</p>
+                            <a href="announcements_ar.html" class="btn btn-sm btn-outline-primary">قراءة المزيد</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-3">
+                <a href="announcements_ar.html" class="btn btn-primary">عرض جميع الإعلانات</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم الروابط السريعة -->
+    <section class="quick-links py-5">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="section-title">روابط سريعة</h2>
+                <p class="section-subtitle">وصول سريع للخدمات الأكثر استخداماً</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="col-6 col-md-3 mb-4">
+                            <a href="attendance_ar.html" class="quick-link-card">
+                                <div class="quick-link-icon">
+                                    <i class="bi bi-calendar-check"></i>
+                                </div>
+                                <h5>سجل الحضور</h5>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3 mb-4">
+                            <a href="leaves_ar.html" class="quick-link-card">
+                                <div class="quick-link-icon">
+                                    <i class="bi bi-calendar2-week"></i>
+                                </div>
+                                <h5>طلب إجازة</h5>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3 mb-4">
+                            <a href="permissions_ar.html" class="quick-link-card">
+                                <div class="quick-link-icon">
+                                    <i class="bi bi-clock"></i>
+                                </div>
+                                <h5>طلب استئذان</h5>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3 mb-4">
+                            <a href="salary_certificate_ar.html" class="quick-link-card">
+                                <div class="quick-link-icon">
+                                    <i class="bi bi-file-earmark-text"></i>
+                                </div>
+                                <h5>تعريف راتب</h5>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3 mb-4">
+                            <a href="complaints_ar.html" class="quick-link-card">
+                                <div class="quick-link-icon">
+                                    <i class="bi bi-chat-dots"></i>
+                                </div>
+                                <h5>تقديم شكوى</h5>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3 mb-4">
+                            <a href="documents_ar.html" class="quick-link-card">
+                                <div class="quick-link-icon">
+                                    <i class="bi bi-folder2-open"></i>
+                                </div>
+                                <h5>المستندات</h5>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3 mb-4">
+                            <a href="training_ar.html" class="quick-link-card">
+                                <div class="quick-link-icon">
+                                    <i class="bi bi-mortarboard"></i>
+                                </div>
+                                <h5>التدريب</h5>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3 mb-4">
+                            <a href="profile_ar.html" class="quick-link-card">
+                                <div class="quick-link-icon">
+                                    <i class="bi bi-person-circle"></i>
+                                </div>
+                                <h5>الملف الشخصي</h5>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- الذيل -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>عن TEKFEN</h5>
+                    <p>شركة TEKFEN هي شركة رائدة في مجال المقاولات والهندسة والتصنيع، تأسست عام 1956 وتعمل في أكثر من 20 دولة حول العالم.</p>
+                    <a href="company_history_ar.html" class="btn btn-sm btn-outline-light">تعرف على تاريخنا</a>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>روابط سريعة</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index_ar.html">الرئيسية</a></li>
+                        <li><a href="attendance_ar.html">الحضور والغياب</a></li>
+                        <li><a href="leaves_ar.html">الإجازات</a></li>
+                        <li><a href="permissions_ar.html">الاستئذان</a></li>
+                        <li><a href="complaints_ar.html">الشكاوى والاقتراحات</a></li>
+                        <li><a href="messages_ar.html">المراسلات</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>تواصل معنا</h5>
+                    <address>
+                        <p><i class="bi bi-geo-alt"></i> الرياض، المملكة العربية السعودية</p>
+                        <p><i class="bi bi-telephone"></i> +966 11 123 4567</p>
+                        <p><i class="bi bi-envelope"></i> info@tekfen.com</p>
+                    </address>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p>&copy; 2025 TEKFEN. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p>نظام TEKFEN للموارد البشرية</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

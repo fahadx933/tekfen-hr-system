@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإعلانات | نظام TEKFEN للموارد البشرية</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index_ar.html">
+                <img src="images/tekfen.jpg" alt="TEKFEN Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index_ar.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="company_history_ar.html">تاريخ الشركة</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="attendanceDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الحضور والغياب
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="attendanceDropdown">
+                            <li><a class="dropdown-item" href="attendance_ar.html">سجل الحضور</a></li>
+                            <li><a class="dropdown-item" href="attendance_admin_ar.html">إدارة الحضور والغياب</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="leavesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الإجازات والاستئذان
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="leavesDropdown">
+                            <li><a class="dropdown-item" href="leaves_ar.html">طلبات الإجازة</a></li>
+                            <li><a class="dropdown-item" href="permissions_ar.html">طلبات الاستئذان</a></li>
+                            <li><a class="dropdown-item" href="leaves_admin_ar.html">إدارة طلبات الإجازة</a></li>
+                            <li><a class="dropdown-item" href="permissions_admin_ar.html">إدارة طلبات الاستئذان</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الخدمات
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="complaints_ar.html">الشكاوى والاقتراحات</a></li>
+                            <li><a class="dropdown-item" href="salary_certificate_ar.html">تعريف الراتب</a></li>
+                            <li><a class="dropdown-item" href="documents_ar.html">إدارة المستندات</a></li>
+                            <li><a class="dropdown-item" href="training_ar.html">التدريب والتطوير</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="announcements_ar.html">الإعلانات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="messages_ar.html">
+                            الرسائل
+                            <span class="badge bg-danger">3</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin_dashboard_ar.html">لوحة التحكم</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> <span id="user-name">اسم المستخدم</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="profile_ar.html">الملف الشخصي</a></li>
+                            <li><a class="dropdown-item" href="change_password_ar.html">تغيير كلمة المرور</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" onclick="logout()">تسجيل الخروج</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-globe"></i>
+                            العربية
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item active" href="#" onclick="changeLanguage('ar')">العربية</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="changeLanguage('en')">English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- المحتوى الرئيسي -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-9 mx-auto">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h4><i class="bi bi-megaphone"></i> الإعلانات</h4>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="notificationsToggle" checked>
+                            <label class="form-check-label" for="notificationsToggle">تفعيل الإشعارات</label>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <!-- تبويبات الإعلانات -->
+                        <ul class="nav nav-tabs" id="announcementsTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="true">جميع الإعلانات</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="company-tab" data-bs-toggle="tab" data-bs-target="#company" type="button" role="tab" aria-controls="company" aria-selected="false">إعلانات الشركة</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="department-tab" data-bs-toggle="tab" data-bs-target="#department" type="button" role="tab" aria-controls="department" aria-selected="false">إعلانات القسم</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="events-tab" data-bs-toggle="tab" data-bs-target="#events" type="button" role="tab" aria-controls="events" aria-selected="false">الفعاليات</button>
+                            </li>
+                        </ul>
+                        
+                        <div class="tab-content" id="announcementsTabContent">
+                            <!-- جميع الإعلانات -->
+                            <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+                                <div class="announcement-list mt-4">
+                                    <!-- إعلان 1 -->
+                                    <div class="announcement-item">
+                                        <div class="announcement-header">
+                                            <div class="announcement-title">
+                                                <h5>اجتماع الفريق الشهري</h5>
+                                                <span class="badge bg-primary">إعلان شركة</span>
+                                            </div>
+                                            <div class="announcement-date">25 مايو 2025</div>
+                                        </div>
+                                        <div class="announcement-content">
+                                            <p>سيتم عقد اجتماع الفريق الشهري يوم الأربعاء القادم الموافق 28 مايو 2025 في قاعة الاجتماعات الرئيسية الساعة 10:00 صباحاً. يرجى من جميع الموظفين الحضور والالتزام بالموعد.</p>
+                                            <p>جدول الأعمال:</p>
+                                            <ul>
+                                                <li>مراجعة أداء الشهر السابق</li>
+                                                <li>مناقشة خطة العمل للشهر القادم</li>
+                                                <li>عرض المشاريع الجديدة</li>
+                                                <li>مناقشة مفتوحة</li>
+                                            </ul>
+                                            <p>يرجى تحضير تقارير الأداء الشهرية قبل الاجتماع.</p>
+                                        </div>
+                                        <div class="announcement-footer">
+                                            <div class="announcement-author">
+                                                <i class="bi bi-person-circle"></i> محمد أحمد - مدير الموارد البشرية
+                                            </div>
+                                            <div class="announcement-actions">
+                                                <button class="btn btn-sm btn-outline-primary">
+                                                    <i class="bi bi-calendar-plus"></i> إضافة للتقويم
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-secondary">
+                                                    <i class="bi bi-share"></i> مشاركة
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- إعلان 2 -->
+                                    <div class="announcement-item">
+                                        <div class="announcement-header">
+                                            <div class="announcement-title">
+                                                <h5>تحديث نظام الموارد البشرية</h5>
+                                                <span class="badge bg-info">تقني</span>
+                                            </div>
+                                            <div class="announcement-date">20 مايو 2025</div>
+                                        </div>
+                                        <div class="announcement-content">
+                                            <p>تم تحديث نظام الموارد البشرية بميزات جديدة تشمل نظام المراسلات الداخلية وتحسينات في نظام الحضور والانصراف. يمكنكم الاطلاع على الميزات الجديدة من خلال الدليل المرفق.</p>
+                                            <p>أبرز التحديثات:</p>
+                                            <ul>
+                                                <li>نظام المراسلات الداخلية بين الموظفين</li>
+                                                <li>تحسينات في نظام الحضور والانصراف</li>
+                                                <li>إضافة ميزة طلبات الاستئذان</li>
+                                                <li>تحسينات في واجهة المستخدم</li>
+                                            </ul>
+                                            <div class="announcement-attachment">
+                                                <i class="bi bi-file-earmark-pdf"></i> <a href="#">دليل المستخدم للنظام الجديد.pdf</a> (2.5 MB)
+                                            </div>
+                                        </div>
+                                        <div class="announcement-footer">
+                                            <div class="announcement-author">
+                                                <i class="bi bi-person-circle"></i> أحمد خالد - قسم تقنية المعلومات
+                                            </div>
+                                            <div class="announcement-actions">
+                                                <button class="btn btn-sm btn-outline-secondary">
+                                                    <i class="bi bi-share"></i> مشاركة
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- إعلان 3 -->
+                                    <div class="announcement-item">
+                                        <div class="announcement-header">
+                                            <div class="announcement-title">
+                                                <h5>فعالية اليوم المفتوح للعائلات</h5>
+                                                <span class="badge bg-success">فعالية</span>
+                                            </div>
+                                            <div class="announcement-date">15 مايو 2025</div>
+                                        </div>
+                                        <div class="announcement-content">
+                                            <p>يسرنا دعوتكم للمشاركة في فعالية اليوم المفتوح للعائلات يوم السبت 7 يونيو 2025 في نادي الشركة. سيتضمن البرنامج أنشطة ترفيهية للأطفال ومسابقات وبوفيه مفتوح.</p>
+                                            <p>تفاصيل الفعالية:</p>
+                                            <ul>
+                                                <li>التاريخ: السبت 7 يونيو 2025</li>
+                                                <li>الوقت: من الساعة 4:00 عصراً حتى 9:00 مساءً</li>
+                                                <li>المكان: نادي الشركة</li>
+                                                <li>الدعوة تشمل الموظف وأفراد عائلته</li>
+                                            </ul>
+                                            <p>يرجى تأكيد الحضور وعدد المرافقين قبل 1 يونيو 2025.</p>
+                                            <div class="announcement-attachment">
+                                                <i class="bi bi-image"></i> <a href="#">صور من فعالية العام الماضي.jpg</a> (3.2 MB)
+                                            </div>
+                                        </div>
+                                        <div class="announcement-footer">
+                                            <div class="announcement-author">
+                                                <i class="bi bi-person-circle"></i> سارة محمد - لجنة الأنشطة الاجتماعية
+                                            </div>
+                                            <div class="announcement-actions">
+                                                <button class="btn btn-sm btn-outline-primary">
+                                                    <i class="bi bi-calendar-plus"></i> إضافة للتقويم
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-success">
+                                                    <i class="bi bi-check-circle"></i> تأكيد الحضور
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-secondary">
+                                                    <i class="bi bi-share"></i> مشاركة
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- إعلان 4 -->
+                                    <div class="announcement-item">
+                                        <div class="announcement-header">
+                                            <div class="announcement-title">
+                                                <h5>تحديث سياسة الإجازات</h5>
+                                                <span class="badge bg-primary">إعلان شركة</span>
+                                            </div>
+                                            <div class="announcement-date">10 مايو 2025</div>
+                                        </div>
+                                        <div class="announcement-content">
+                                            <p>نود إعلامكم بتحديث سياسة الإجازات في الشركة، حيث تم إجراء بعض التعديلات لتحسين التوازن بين العمل والحياة الشخصية للموظفين.</p>
+                                            <p>أهم التعديلات:</p>
+                                            <ul>
+                                                <li>زيادة رصيد الإجازات السنوية من 21 يوم إلى 25 يوم</li>
+                                                <li>إضافة إجازة يوم ميلاد الموظف (يوم واحد)</li>
+                                                <li>تحسين سياسة الإجازات المرضية</li>
+                                                <li>إضافة إجازة الأبوة (5 أيام مدفوعة)</li>
+                                            </ul>
+                                            <p>ستدخل هذه التعديلات حيز التنفيذ اعتباراً من 1 يونيو 2025.</p>
+                                            <div class="announcement-attachment">
+                                                <i class="bi bi-file-earmark-pdf"></i> <a href="#">سياسة الإجازات الجديدة.pdf</a> (1.8 MB)
+                                            </div>
+                                        </div>
+                                        <div class="announcement-footer">
+                                            <div class="announcement-author">
+                                                <i class="bi bi-person-circle"></i> محمد أحمد - مدير الموارد البشرية
+                                            </div>
+                                            <div class="announcement-actions">
+                                                <button class="btn btn-sm btn-outline-secondary">
+                                                    <i class="bi bi-share"></i> مشاركة
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- إعلان 5 -->
+                                    <div class="announcement-item">
+                                        <div class="announcement-header">
+                                            <div class="announcement-title">
+                                                <h5>دورة تدريبية: مهارات القيادة المتقدمة</h5>
+                                                <span class="badge bg-warning">تدريب</span>
+                                            </div>
+                                            <div class="announcement-date">5 مايو 2025</div>
+                                        </div>
+                                        <div class="announcement-content">
+                                            <p>يسرنا الإعلان عن دورة تدريبية في مهارات القيادة المتقدمة للمدراء والمشرفين، والتي ستقام خلال الفترة من 15 إلى 17 يونيو 2025.</p>
+                                            <p>تفاصيل الدورة:</p>
+                                            <ul>
+                                                <li>التاريخ: 15-17 يونيو 2025</li>
+                                                <li>الوقت: من الساعة 9:00 صباحاً حتى 2:00 ظهراً</li>
+                                                <li>المكان: قاعة التدريب الرئيسية</li>
+                                                <li>المدرب: د. أحمد محمد - خبير في القيادة والإدارة</li>
+                                            </ul>
+                                            <p>للتسجيل في الدورة، يرجى زيارة صفحة التدريب والتطوير.</p>
+                                            <div class="announcement-attachment">
+                                                <i class="bi bi-file-earmark-pdf"></i> <a href="#">محتوى الدورة التدريبية.pdf</a> (1.2 MB)
+                                            </div>
+                                        </div>
+                                        <div class="announcement-footer">
+                                            <div class="announcement-author">
+                                                <i class="bi bi-person-circle"></i> ليلى عمر - قسم التدريب والتطوير
+                                            </div>
+                                            <div class="announcement-actions">
+                                                <button class="btn btn-sm btn-outline-primary">
+                                                    <i class="bi bi-calendar-plus"></i> إضافة للتقويم
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-success">
+                                                    <i class="bi bi-check-circle"></i> التسجيل في الدورة
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-secondary">
+                                                    <i class="bi bi-share"></i> مشاركة
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- ترقيم الصفحات -->
+                                <nav aria-label="Page navigation" class="mt-4">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">السابق</a>
+                                        </li>
+                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">التالي</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            
+                            <!-- إعلانات الشركة -->
+                            <div class="tab-pane fade" id="company" role="tabpanel" aria-labelledby="company-tab">
+                                <div class="announcement-list mt-4">
+                                    <!-- إعلان 1 -->
+                                    <div class="announcement-item">
+                                        <div class="announcement-header">
+                                            <div class="announcement-title">
+                                                <h5>اجتماع الفريق الشهري</h5>
+                                                <span class="badge bg-primary">إعلان شركة</span>
+                                            </div>
+                                            <div class="announcement-date">25 مايو 2025</div>
+                                        </div>
+                                        <div class="announcement-content">
+                                            <p>سيتم عقد اجتماع الفريق الشهري يوم الأربعاء القادم الموافق 28 مايو 2025 في قاعة الاجتماعات الرئيسية الساعة 10:00 صباحاً. يرجى من جميع الموظفين الحضور والالتزام بالموعد.</p>
+                                        </div>
+                                        <div class="announcement-footer">
+                                            <div class="announcement-author">
+                                                <i class="bi bi-person-circle"></i> محمد أحمد - مدير الموارد البشرية
+                                            </div>
+                                            <div class="announcement-actions">
+                                                <button class="btn btn-sm btn-outline-primary">
+                                                    <i class="bi bi-calendar-plus"></i> إضافة للتقويم
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-secondary">
+                                                    <i class="bi bi-share"></i> مشاركة
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- إعلان 2 -->
+                                    <div class="announcement-item">
+                                        <div class="announcement-header">
+                                            <div class="announcement-title">
+                                                <h5>تحديث سياسة الإجازات</h5>
+                                                <span class="badge bg-primary">إعلان شركة</span>
+                                            </div>
+                                            <div class="announcement-date">10 مايو 2025</div>
+                                        </div>
+                                        <div class="announcement-content">
+                                            <p>نود إعلامكم بتحديث سياسة الإجازات في الشركة، حيث تم إجراء بعض التعديلات لتحسين التوازن بين العمل والحياة الشخصية للموظفين.</p>
+                                        </div>
+                                        <div class="announcement-footer">
+                                            <div class="announcement-author">
+                                                <i class="bi bi-person-circle"></i> محمد أحمد - مدير الموارد البشرية
+                                            </div>
+                                            <div class="announcement-actions">
+                                                <button class="btn btn-sm btn-outline-secondary">
+                                                    <i class="bi bi-share"></i> مشاركة
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- إعلانات القسم -->
+                            <div class="tab-pane fade" id="department" role="tabpanel" aria-labelledby="department-tab">
+                                <div class="announcement-list mt-4">
+                                    <!-- إعلان 1 -->
+                                    <div class="announcement-item">
+                                        <div class="announcement-header">
+                                            <div class="announcement-title">
+                                                <h5>تحديث نظام الموارد البشرية</h5>
+                                                <span class="badge bg-info">تقني</span>
+                                            </div>
+                                            <div class="announcement-date">20 مايو 2025</div>
+                                        </div>
+                                        <div class="announcement-content">
+                                            <p>تم تحديث نظام الموارد البشرية بميزات جديدة تشمل نظام المراسلات الداخلية وتحسينات في نظام الحضور والانصراف. يمكنكم الاطلاع على الميزات الجديدة من خلال الدليل المرفق.</p>
+                                        </div>
+                                        <div class="announcement-footer">
+                                            <div class="announcement-author">
+                                                <i class="bi bi-person-circle"></i> أحمد خالد - قسم تقنية المعلومات
+                                            </div>
+                                            <div class="announcement-actions">
+                                                <button class="btn btn-sm btn-outline-secondary">
+                                                    <i class="bi bi-share"></i> مشاركة
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- إعلان 2 -->
+                                    <div class="announcement-item">
+                                        <div class="announcement-header">
+                                            <div class="announcement-title">
+                                                <h5>دورة تدريبية: مهارات القيادة المتقدمة</h5>
+                                                <span class="badge bg-warning">تدريب</span>
+                                            </div>
+                                            <div class="announcement-date">5 مايو 2025</div>
+                                        </div>
+                                        <div class="announcement-content">
+                                            <p>يسرنا الإعلان عن دورة تدريبية في مهارات القيادة المتقدمة للمدراء والمشرفين، والتي ستقام خلال الفترة من 15 إلى 17 يونيو 2025.</p>
+                                        </div>
+                                        <div class="announcement-footer">
+                                            <div class="announcement-author">
+                                                <i class="bi bi-person-circle"></i> ليلى عمر - قسم التدريب والتطوير
+                                            </div>
+                                            <div class="announcement-actions">
+                                                <button class="btn btn-sm btn-outline-primary">
+                                                    <i class="bi bi-calendar-plus"></i> إضافة للتقويم
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-success">
+                                                    <i class="bi bi-check-circle"></i> التسجيل في الدورة
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-secondary">
+                                                    <i class="bi bi-share"></i> مشاركة
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- الفعاليات -->
+                            <div class="tab-pane fade" id="events" role="tabpanel" aria-labelledby="events-tab">
+                                <div class="announcement-list mt-4">
+                                    <!-- إعلان 1 -->
+                                    <div class="announcement-item">
+                                        <div class="announcement-header">
+                                            <div class="announcement-title">
+                                                <h5>فعالية اليوم المفتوح للعائلات</h5>
+                                                <span class="badge bg-success">فعالية</span>
+                                            </div>
+                                            <div class="announcement-date">15 مايو 2025</div>
+                                        </div>
+                                        <div class="announcement-content">
+                                            <p>يسرنا دعوتكم للمشاركة في فعالية اليوم المفتوح للعائلات يوم السبت 7 يونيو 2025 في نادي الشركة. سيتضمن البرنامج أنشطة ترفيهية للأطفال ومسابقات وبوفيه مفتوح.</p>
+                                        </div>
+                                        <div class="announcement-footer">
+                                            <div class="announcement-author">
+                                                <i class="bi bi-person-circle"></i> سارة محمد - لجنة الأنشطة الاجتماعية
+                                            </div>
+                                            <div class="announcement-actions">
+                                                <button class="btn btn-sm btn-outline-primary">
+                                                    <i class="bi bi-calendar-plus"></i> إضافة للتقويم
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-success">
+                                                    <i class="bi bi-check-circle"></i> تأكيد الحضور
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-secondary">
+                                                    <i class="bi bi-share"></i> مشاركة
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- الذيل -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p>&copy; 2025 TEKFEN. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p>نظام TEKFEN للموارد البشرية</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
