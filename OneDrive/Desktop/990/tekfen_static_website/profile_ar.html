@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الملف الشخصي | نظام TEKFEN للموارد البشرية</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index_ar.html">
+                <img src="images/tekfen.jpg" alt="TEKFEN Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index_ar.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="company_history_ar.html">تاريخ الشركة</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="attendanceDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الحضور والغياب
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="attendanceDropdown">
+                            <li><a class="dropdown-item" href="attendance_ar.html">سجل الحضور</a></li>
+                            <li><a class="dropdown-item" href="attendance_admin_ar.html">إدارة الحضور والغياب</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="leavesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الإجازات والاستئذان
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="leavesDropdown">
+                            <li><a class="dropdown-item" href="leaves_ar.html">طلبات الإجازة</a></li>
+                            <li><a class="dropdown-item" href="permissions_ar.html">طلبات الاستئذان</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الخدمات
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="complaints_ar.html">الشكاوى والاقتراحات</a></li>
+                            <li><a class="dropdown-item" href="salary_certificate_ar.html">تعريف الراتب</a></li>
+                            <li><a class="dropdown-item" href="documents_ar.html">إدارة المستندات</a></li>
+                            <li><a class="dropdown-item" href="training_ar.html">التدريب والتطوير</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="announcements_ar.html">الإعلانات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="messages_ar.html">
+                            الرسائل
+                            <span class="badge bg-danger">3</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> <span id="user-name">أحمد محمد</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item active" href="profile_ar.html">الملف الشخصي</a></li>
+                            <li><a class="dropdown-item" href="change_password_ar.html">تغيير كلمة المرور</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" onclick="logout()">تسجيل الخروج</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-globe"></i>
+                            العربية
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item active" href="#" onclick="changeLanguage('ar')">العربية</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="changeLanguage('en')">English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- المحتوى الرئيسي -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4><i class="bi bi-person-circle"></i> الملف الشخصي</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 text-center mb-4">
+                                <div class="profile-image-container">
+                                    <img src="https://via.placeholder.com/200" alt="صورة الملف الشخصي" class="img-fluid rounded-circle profile-image">
+                                    <div class="profile-image-overlay">
+                                        <button class="btn btn-sm btn-light" onclick="changeProfileImage()"><i class="bi bi-camera"></i> تغيير الصورة</button>
+                                    </div>
+                                </div>
+                                <h4 class="mt-3">أحمد محمد</h4>
+                                <p class="text-muted">مطور برمجيات</p>
+                                <p><span class="badge bg-primary">قسم تقنية المعلومات</span></p>
+                                <div class="mt-3">
+                                    <button class="btn btn-primary" onclick="editProfile()"><i class="bi bi-pencil"></i> تعديل الملف الشخصي</button>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <ul class="nav nav-tabs" id="profileTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="personal-tab" data-bs-toggle="tab" data-bs-target="#personal" type="button" role="tab" aria-controls="personal" aria-selected="true">المعلومات الشخصية</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="employment-tab" data-bs-toggle="tab" data-bs-target="#employment" type="button" role="tab" aria-controls="employment" aria-selected="false">معلومات التوظيف</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="documents-tab" data-bs-toggle="tab" data-bs-target="#documents" type="button" role="tab" aria-controls="documents" aria-selected="false">المستندات</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">الإعدادات</button>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="profileTabContent">
+                                    <!-- المعلومات الشخصية -->
+                                    <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="personal-tab">
+                                        <div class="p-3">
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <div class="mb-3">
+                                                        <label class="form-label fw-bold">الاسم الكامل</label>
+                                                        <p>أحمد محمد علي</p>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label fw-bold">تاريخ الميلاد</label>
+                                                        <p>15/05/1990</p>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label fw-bold">الجنسية</label>
+                                                        <p>سعودي</p>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label fw-bold">رقم الهوية</label>
+                                                        <p>1234567890</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="mb-3">
+                                                        <label class="form-label fw-bold">البريد الإلكتروني</label>
+                                                        <p>ahmed.m@tekfen.com</p>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label fw-bold">رقم الجوال</label>
+                                                        <p>+966 50 123 4567</p>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label fw-bold">العنوان</label>
+                                                        <p>الرياض، المملكة العربية السعودية</p>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label fw-bold">الحالة الاجتماعية</label>
+                                                        <p>متزوج</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label fw-bold">جهات الاتصال في حالات الطوارئ</label>
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>الاسم</th>
+                                                                <th>صلة القرابة</th>
+                                                                <th>رقم الهاتف</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>سارة أحمد</td>
+                                                                <td>زوجة</td>
+                                                                <td>+966 50 987 6543</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>محمد علي</td>
+                                                                <td>أخ</td>
+                                                                <td>+966 55 123 4567</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- معلومات التوظيف -->
+                                    <div class="tab-pane fade" id="employment" role="tabpanel" aria-labelledby="employment-tab">
+                                        <div class="p-3">
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <div class="mb-3">
+                                                        <label class="form-label fw-bold">الرقم الوظيفي</label>
+                                                        <p>1001</p>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label fw-bold">المسمى الوظيفي</label>
+                                                        <p>مطور برمجيات</p>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label fw-bold">القسم</label>
+                                                        <p>تقنية المعلومات</p>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label fw-bold">المدير المباشر</label>
+                                                        <p>خالد عبدالله (مدير تقنية المعلومات)</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="mb-3">
+                                                        <label class="form-label fw-bold">تاريخ التعيين</label>
+                                                        <p>01/03/2020</p>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label fw-bold">نوع العقد</label>
+                                                        <p>دوام كامل</p>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label fw-bold">الراتب الأساسي</label>
+                                                        <p>15,000 ريال سعودي</p>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label class="form-label fw-bold">رصيد الإجازات</label>
+                                                        <p>21 يوم</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label class="form-label fw-bold">المهارات والمؤهلات</label>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <ul class="list-group">
+                                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                                JavaScript
+                                                                <div>
+                                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                                    <i class="bi bi-star text-warning"></i>
+                                                                </div>
+                                                            </li>
+                                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                                React.js
+                                                                <div>
+                                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                                    <i class="bi bi-star text-warning"></i>
+                                                                </div>
+                                                            </li>
+                                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                                Node.js
+                                                                <div>
+                                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                                    <i class="bi bi-star text-warning"></i>
+                                                                    <i class="bi bi-star text-warning"></i>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <ul class="list-group">
+                                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                                HTML/CSS
+                                                                <div>
+                                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                                </div>
+                                                            </li>
+                                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                                SQL
+                                                                <div>
+                                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                                    <i class="bi bi-star text-warning"></i>
+                                                                    <i class="bi bi-star text-warning"></i>
+                                                                </div>
+                                                            </li>
+                                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                                إدارة المشاريع
+                                                                <div>
+                                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                                    <i class="bi bi-star text-warning"></i>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="mb-3">
+                                                <label class="form-label fw-bold">الشهادات والمؤهلات العلمية</label>
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>الشهادة</th>
+                                                                <th>المؤسسة التعليمية</th>
+                                                                <th>سنة التخرج</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>بكالوريوس علوم الحاسب</td>
+                                                                <td>جامعة الملك سعود</td>
+                                                                <td>2012</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ماجستير هندسة البرمجيات</td>
+                                                                <td>جامعة الملك فهد للبترول والمعادن</td>
+                                                                <td>2015</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>شهادة PMP في إدارة المشاريع</td>
+                                                                <td>معهد إدارة المشاريع (PMI)</td>
+                                                                <td>2018</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- المستندات -->
+                                    <div class="tab-pane fade" id="documents" role="tabpanel" aria-labelledby="documents-tab">
+                                        <div class="p-3">
+                                            <div class="mb-3">
+                                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                                    <h5>المستندات الشخصية</h5>
+                                                    <button class="btn btn-primary btn-sm"><i class="bi bi-upload"></i> رفع مستند جديد</button>
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>اسم المستند</th>
+                                                                <th>النوع</th>
+                                                                <th>تاريخ الرفع</th>
+                                                                <th>تاريخ الانتهاء</th>
+                                                                <th>الإجراءات</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>صورة الهوية الوطنية</td>
+                                                                <td>وثيقة رسمية</td>
+                                                                <td>01/03/2020</td>
+                                                                <td>15/05/2030</td>
+                                                                <td>
+                                                                    <button class="btn btn-sm btn-info"><i class="bi bi-eye"></i></button>
+                                                                    <button class="btn btn-sm btn-success"><i class="bi bi-download"></i></button>
+                                                                    <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>جواز السفر</td>
+                                                                <td>وثيقة رسمية</td>
+                                                                <td>01/03/2020</td>
+                                                                <td>10/11/2027</td>
+                                                                <td>
+                                                                    <button class="btn btn-sm btn-info"><i class="bi bi-eye"></i></button>
+                                                                    <button class="btn btn-sm btn-success"><i class="bi bi-download"></i></button>
+                                                                    <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>شهادة بكالوريوس</td>
+                                                                <td>شهادة تعليمية</td>
+                                                                <td>01/03/2020</td>
+                                                                <td>-</td>
+                                                                <td>
+                                                                    <button class="btn btn-sm btn-info"><i class="bi bi-eye"></i></button>
+                                                                    <button class="btn btn-sm btn-success"><i class="bi bi-download"></i></button>
+                                                                    <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>شهادة ماجستير</td>
+                                                                <td>شهادة تعليمية</td>
+                                                                <td>01/03/2020</td>
+                                                                <td>-</td>
+                                                                <td>
+                                                                    <button class="btn btn-sm btn-info"><i class="bi bi-eye"></i></button>
+                                                                    <button class="btn btn-sm btn-success"><i class="bi bi-download"></i></button>
+                                                                    <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>شهادة PMP</td>
+                                                                <td>شهادة مهنية</td>
+                                                                <td>01/03/2020</td>
+                                                                <td>15/06/2026</td>
+                                                                <td>
+                                                                    <button class="btn btn-sm btn-info"><i class="bi bi-eye"></i></button>
+                                                                    <button class="btn btn-sm btn-success"><i class="bi bi-download"></i></button>
+                                                                    <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="mb-3">
+                                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                                    <h5>مستندات الشركة</h5>
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>اسم المستند</th>
+                                                                <th>النوع</th>
+                                                                <th>تاريخ الإصدار</th>
+                                                                <th>الإجراءات</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>عقد العمل</td>
+                                                                <td>مستند قانوني</td>
+                                                                <td>01/03/2020</td>
+                                                                <td>
+                                                                    <button class="btn btn-sm btn-info"><i class="bi bi-eye"></i></button>
+                                                                    <button class="btn btn-sm btn-success"><i class="bi bi-download"></i></button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>الوصف الوظيفي</td>
+                                                                <td>مستند وظيفي</td>
+                                                                <td>01/03/2020</td>
+                                                                <td>
+                                                                    <button class="btn btn-sm btn-info"><i class="bi bi-eye"></i></button>
+                                                                    <button class="btn btn-sm btn-success"><i class="bi bi-download"></i></button>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>سياسات الشركة</td>
+                                                                <td>مستند تنظيمي</td>
+                                                                <td>01/01/2025</td>
+                                                                <td>
+                                                                    <button class="btn btn-sm btn-info"><i class="bi bi-eye"></i></button>
+                                                                    <button class="btn btn-sm btn-success"><i class="bi bi-download"></i></button>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- الإعدادات -->
+                                    <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                                        <div class="p-3">
+                                            <div class="mb-4">
+                                                <h5>إعدادات الحساب</h5>
+                                                <div class="mb-3">
+                                                    <label class="form-label">البريد الإلكتروني</label>
+                                                    <input type="email" class="form-control" value="ahmed.m@tekfen.com">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label">اللغة المفضلة</label>
+                                                    <select class="form-select">
+                                                        <option selected>العربية</option>
+                                                        <option>English</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label">المنطقة الزمنية</label>
+                                                    <select class="form-select">
+                                                        <option selected>(GMT+03:00) الرياض</option>
+                                                        <option>(GMT+00:00) لندن</option>
+                                                        <option>(GMT-05:00) نيويورك</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <h5>إعدادات الإشعارات</h5>
+                                                <div class="form-check form-switch mb-2">
+                                                    <input class="form-check-input" type="checkbox" id="emailNotifications" checked>
+                                                    <label class="form-check-label" for="emailNotifications">إشعارات البريد الإلكتروني</label>
+                                                </div>
+                                                <div class="form-check form-switch mb-2">
+                                                    <input class="form-check-input" type="checkbox" id="smsNotifications">
+                                                    <label class="form-check-label" for="smsNotifications">إشعارات الرسائل النصية</label>
+                                                </div>
+                                                <div class="form-check form-switch mb-2">
+                                                    <input class="form-check-input" type="checkbox" id="browserNotifications" checked>
+                                                    <label class="form-check-label" for="browserNotifications">إشعارات المتصفح</label>
+                                                </div>
+                                                <div class="mt-3">
+                                                    <h6>أنواع الإشعارات</h6>
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="checkbox" id="attendanceNotifications" checked>
+                                                        <label class="form-check-label" for="attendanceNotifications">إشعارات الحضور والغياب</label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="checkbox" id="leaveNotifications" checked>
+                                                        <label class="form-check-label" for="leaveNotifications">إشعارات الإجازات والاستئذان</label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="checkbox" id="announcementNotifications" checked>
+                                                        <label class="form-check-label" for="announcementNotifications">إشعارات الإعلانات</label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="checkbox" id="messageNotifications" checked>
+                                                        <label class="form-check-label" for="messageNotifications">إشعارات الرسائل</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <h5>الأمان</h5>
+                                                <div class="mb-3">
+                                                    <a href="change_password_ar.html" class="btn btn-outline-primary">تغيير كلمة المرور</a>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" id="twoFactorAuth">
+                                                        <label class="form-check-label" for="twoFactorAuth">تفعيل المصادقة الثنائية</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="text-end">
+                                                <button class="btn btn-primary">حفظ الإعدادات</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- الذيل -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p>&copy; 2025 TEKFEN. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p>نظام TEKFEN للموارد البشرية</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

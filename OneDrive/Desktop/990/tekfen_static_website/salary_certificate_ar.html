@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعريف الراتب | نظام TEKFEN للموارد البشرية</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index_ar.html">
+                <img src="images/tekfen.jpg" alt="TEKFEN Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index_ar.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="company_history_ar.html">تاريخ الشركة</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="attendanceDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الحضور والغياب
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="attendanceDropdown">
+                            <li><a class="dropdown-item" href="attendance_ar.html">سجل الحضور</a></li>
+                            <li><a class="dropdown-item" href="attendance_admin_ar.html">إدارة الحضور والغياب</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="leavesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الإجازات والاستئذان
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="leavesDropdown">
+                            <li><a class="dropdown-item" href="leaves_ar.html">طلبات الإجازة</a></li>
+                            <li><a class="dropdown-item" href="permissions_ar.html">طلبات الاستئذان</a></li>
+                            <li><a class="dropdown-item" href="leaves_admin_ar.html">إدارة طلبات الإجازة</a></li>
+                            <li><a class="dropdown-item" href="permissions_admin_ar.html">إدارة طلبات الاستئذان</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الخدمات
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="complaints_ar.html">الشكاوى والاقتراحات</a></li>
+                            <li><a class="dropdown-item active" href="salary_certificate_ar.html">تعريف الراتب</a></li>
+                            <li><a class="dropdown-item" href="documents_ar.html">إدارة المستندات</a></li>
+                            <li><a class="dropdown-item" href="training_ar.html">التدريب والتطوير</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="announcements_ar.html">الإعلانات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="messages_ar.html">
+                            الرسائل
+                            <span class="badge bg-danger">3</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin_dashboard_ar.html">لوحة التحكم</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> <span id="user-name">اسم المستخدم</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="profile_ar.html">الملف الشخصي</a></li>
+                            <li><a class="dropdown-item" href="change_password_ar.html">تغيير كلمة المرور</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" onclick="logout()">تسجيل الخروج</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-globe"></i>
+                            العربية
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item active" href="#" onclick="changeLanguage('ar')">العربية</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="changeLanguage('en')">English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- المحتوى الرئيسي -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card">
+                    <div class="card-header">
+                        <h4><i class="bi bi-cash-coin"></i> تعريف الراتب</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- معلومات الراتب -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5>معلومات الراتب الشهري</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">الراتب الأساسي</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="bi bi-currency-dollar"></i></span>
+                                                <input type="text" class="form-control" value="5,000.00" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">بدل السكن</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="bi bi-house"></i></span>
+                                                <input type="text" class="form-control" value="1,500.00" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">بدل المواصلات</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="bi bi-car-front"></i></span>
+                                                <input type="text" class="form-control" value="500.00" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">بدلات أخرى</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="bi bi-plus-circle"></i></span>
+                                                <input type="text" class="form-control" value="300.00" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">الخصومات</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="bi bi-dash-circle"></i></span>
+                                                <input type="text" class="form-control" value="800.00" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">التأمينات الاجتماعية</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="bi bi-shield"></i></span>
+                                                <input type="text" class="form-control" value="400.00" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">إجمالي الراتب</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="bi bi-cash"></i></span>
+                                                <input type="text" class="form-control fw-bold" value="7,300.00" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">صافي الراتب</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="bi bi-cash-stack"></i></span>
+                                                <input type="text" class="form-control fw-bold" value="6,100.00" readonly>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- طلب تعريف راتب -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5>طلب تعريف راتب</h5>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="certificate-type" class="form-label">نوع التعريف</label>
+                                                <select class="form-select" id="certificate-type" required>
+                                                    <option value="">اختر نوع التعريف</option>
+                                                    <option value="bank">للبنك</option>
+                                                    <option value="embassy">للسفارة</option>
+                                                    <option value="general">عام</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="certificate-language" class="form-label">لغة التعريف</label>
+                                                <select class="form-select" id="certificate-language" required>
+                                                    <option value="">اختر اللغة</option>
+                                                    <option value="ar">العربية</option>
+                                                    <option value="en">الإنجليزية</option>
+                                                    <option value="both">كلاهما</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="certificate-notes" class="form-label">ملاحظات إضافية</label>
+                                        <textarea class="form-control" id="certificate-notes" rows="3"></textarea>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="button" class="btn btn-primary" onclick="alert('تم إرسال طلب تعريف الراتب بنجاح. سيتم معالجة الطلب خلال يوم عمل واحد.')">
+                                            <i class="bi bi-send"></i> تقديم الطلب
+                                        </button>
+                                        <button type="button" class="btn btn-success ms-2" onclick="window.open('salary_certificate_preview_ar.html', '_blank')">
+                                            <i class="bi bi-file-earmark-pdf"></i> معاينة النموذج
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        
+                        <!-- سجل طلبات تعريف الراتب -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>سجل طلبات تعريف الراتب</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>نوع التعريف</th>
+                                                <th>اللغة</th>
+                                                <th>تاريخ الطلب</th>
+                                                <th>الحالة</th>
+                                                <th>الإجراءات</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>للبنك</td>
+                                                <td>العربية</td>
+                                                <td>15/05/2025</td>
+                                                <td><span class="badge bg-success">مكتمل</span></td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-primary" onclick="window.open('salary_certificate_preview_ar.html', '_blank')">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>للسفارة</td>
+                                                <td>الإنجليزية</td>
+                                                <td>10/04/2025</td>
+                                                <td><span class="badge bg-success">مكتمل</span></td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-primary" onclick="window.open('salary_certificate_preview_ar.html', '_blank')">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>عام</td>
+                                                <td>كلاهما</td>
+                                                <td>01/03/2025</td>
+                                                <td><span class="badge bg-success">مكتمل</span></td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-primary" onclick="window.open('salary_certificate_preview_ar.html', '_blank')">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- الذيل -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p>&copy; 2025 TEKFEN. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p>نظام TEKFEN للموارد البشرية</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

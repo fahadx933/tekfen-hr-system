@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة المستندات | نظام TEKFEN للموارد البشرية</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index_ar.html">
+                <img src="images/tekfen.jpg" alt="TEKFEN Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index_ar.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="company_history_ar.html">تاريخ الشركة</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="attendanceDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الحضور والغياب
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="attendanceDropdown">
+                            <li><a class="dropdown-item" href="attendance_ar.html">سجل الحضور</a></li>
+                            <li><a class="dropdown-item" href="attendance_admin_ar.html">إدارة الحضور والغياب</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="leavesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الإجازات والاستئذان
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="leavesDropdown">
+                            <li><a class="dropdown-item" href="leaves_ar.html">طلبات الإجازة</a></li>
+                            <li><a class="dropdown-item" href="permissions_ar.html">طلبات الاستئذان</a></li>
+                            <li><a class="dropdown-item" href="leaves_admin_ar.html">إدارة طلبات الإجازة</a></li>
+                            <li><a class="dropdown-item" href="permissions_admin_ar.html">إدارة طلبات الاستئذان</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الخدمات
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="complaints_ar.html">الشكاوى والاقتراحات</a></li>
+                            <li><a class="dropdown-item" href="salary_certificate_ar.html">تعريف الراتب</a></li>
+                            <li><a class="dropdown-item active" href="documents_ar.html">إدارة المستندات</a></li>
+                            <li><a class="dropdown-item" href="training_ar.html">التدريب والتطوير</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="announcements_ar.html">الإعلانات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="messages_ar.html">
+                            الرسائل
+                            <span class="badge bg-danger">3</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin_dashboard_ar.html">لوحة التحكم</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> <span id="user-name">اسم المستخدم</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="profile_ar.html">الملف الشخصي</a></li>
+                            <li><a class="dropdown-item" href="change_password_ar.html">تغيير كلمة المرور</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" onclick="logout()">تسجيل الخروج</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-globe"></i>
+                            العربية
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item active" href="#" onclick="changeLanguage('ar')">العربية</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="changeLanguage('en')">English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- المحتوى الرئيسي -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card">
+                    <div class="card-header">
+                        <h4><i class="bi bi-file-earmark-text"></i> إدارة المستندات</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- أزرار الإجراءات -->
+                        <div class="d-flex justify-content-end mb-4">
+                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadDocumentModal">
+                                <i class="bi bi-upload"></i> رفع مستند جديد
+                            </a>
+                        </div>
+                        
+                        <!-- تبويبات المستندات -->
+                        <ul class="nav nav-tabs" id="documentsTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="personal-tab" data-bs-toggle="tab" data-bs-target="#personal" type="button" role="tab" aria-controls="personal" aria-selected="true">المستندات الشخصية</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="company-tab" data-bs-toggle="tab" data-bs-target="#company" type="button" role="tab" aria-controls="company" aria-selected="false">مستندات الشركة</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="contracts-tab" data-bs-toggle="tab" data-bs-target="#contracts" type="button" role="tab" aria-controls="contracts" aria-selected="false">العقود والاتفاقيات</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="forms-tab" data-bs-toggle="tab" data-bs-target="#forms" type="button" role="tab" aria-controls="forms" aria-selected="false">النماذج</button>
+                            </li>
+                        </ul>
+                        
+                        <div class="tab-content" id="documentsTabContent">
+                            <!-- المستندات الشخصية -->
+                            <div class="tab-pane fade show active" id="personal" role="tabpanel" aria-labelledby="personal-tab">
+                                <div class="table-responsive mt-3">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>اسم المستند</th>
+                                                <th>النوع</th>
+                                                <th>تاريخ الرفع</th>
+                                                <th>الحجم</th>
+                                                <th>الحالة</th>
+                                                <th>الإجراءات</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>الهوية الوطنية</td>
+                                                <td>PDF</td>
+                                                <td>15/01/2025</td>
+                                                <td>1.2 MB</td>
+                                                <td><span class="badge bg-success">معتمد</span></td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-primary">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-info">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>جواز السفر</td>
+                                                <td>PDF</td>
+                                                <td>15/01/2025</td>
+                                                <td>2.5 MB</td>
+                                                <td><span class="badge bg-success">معتمد</span></td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-primary">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-info">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>الشهادة الجامعية</td>
+                                                <td>PDF</td>
+                                                <td>20/01/2025</td>
+                                                <td>3.1 MB</td>
+                                                <td><span class="badge bg-success">معتمد</span></td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-primary">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-info">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>شهادة الخبرة</td>
+                                                <td>PDF</td>
+                                                <td>20/01/2025</td>
+                                                <td>1.8 MB</td>
+                                                <td><span class="badge bg-success">معتمد</span></td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-primary">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-info">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>السيرة الذاتية</td>
+                                                <td>DOCX</td>
+                                                <td>25/01/2025</td>
+                                                <td>0.8 MB</td>
+                                                <td><span class="badge bg-success">معتمد</span></td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-primary">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-info">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <!-- مستندات الشركة -->
+                            <div class="tab-pane fade" id="company" role="tabpanel" aria-labelledby="company-tab">
+                                <div class="table-responsive mt-3">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>اسم المستند</th>
+                                                <th>النوع</th>
+                                                <th>تاريخ النشر</th>
+                                                <th>الحجم</th>
+                                                <th>الإجراءات</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>دليل الموظف</td>
+                                                <td>PDF</td>
+                                                <td>01/01/2025</td>
+                                                <td>5.2 MB</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-primary">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-info">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>سياسة الموارد البشرية</td>
+                                                <td>PDF</td>
+                                                <td>01/01/2025</td>
+                                                <td>3.7 MB</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-primary">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-info">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>الهيكل التنظيمي</td>
+                                                <td>PDF</td>
+                                                <td>15/01/2025</td>
+                                                <td>1.5 MB</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-primary">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-info">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>سياسة الإجازات</td>
+                                                <td>PDF</td>
+                                                <td>15/01/2025</td>
+                                                <td>2.1 MB</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-primary">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-info">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>سياسة أمن المعلومات</td>
+                                                <td>PDF</td>
+                                                <td>20/01/2025</td>
+                                                <td>2.8 MB</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-primary">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-info">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <!-- العقود والاتفاقيات -->
+                            <div class="tab-pane fade" id="contracts" role="tabpanel" aria-labelledby="contracts-tab">
+                                <div class="table-responsive mt-3">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>اسم المستند</th>
+                                                <th>النوع</th>
+                                                <th>تاريخ البدء</th>
+                                                <th>تاريخ الانتهاء</th>
+                                                <th>الحالة</th>
+                                                <th>الإجراءات</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>عقد العمل</td>
+                                                <td>PDF</td>
+                                                <td>01/01/2025</td>
+                                                <td>31/12/2025</td>
+                                                <td><span class="badge bg-success">ساري</span></td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-primary">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-info">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>اتفاقية السرية</td>
+                                                <td>PDF</td>
+                                                <td>01/01/2025</td>
+                                                <td>غير محدد</td>
+                                                <td><span class="badge bg-success">ساري</span></td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-primary">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-info">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>اتفاقية التأمين الصحي</td>
+                                                <td>PDF</td>
+                                                <td>01/01/2025</td>
+                                                <td>31/12/2025</td>
+                                                <td><span class="badge bg-success">ساري</span></td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-primary">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-info">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <!-- النماذج -->
+                            <div class="tab-pane fade" id="forms" role="tabpanel" aria-labelledby="forms-tab">
+                                <div class="table-responsive mt-3">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>اسم النموذج</th>
+                                                <th>النوع</th>
+                                                <th>تاريخ التحديث</th>
+                                                <th>الحجم</th>
+                                                <th>الإجراءات</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>نموذج طلب إجازة</td>
+                                                <td>DOCX</td>
+                                                <td>01/01/2025</td>
+                                                <td>0.5 MB</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-primary">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-info">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>نموذج تقييم الأداء</td>
+                                                <td>DOCX</td>
+                                                <td>01/01/2025</td>
+                                                <td>0.7 MB</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-primary">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-info">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>نموذج طلب تعويض مصاريف</td>
+                                                <td>XLSX</td>
+                                                <td>15/01/2025</td>
+                                                <td>0.6 MB</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-primary">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-info">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>نموذج طلب ترقية</td>
+                                                <td>DOCX</td>
+                                                <td>15/01/2025</td>
+                                                <td>0.5 MB</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-primary">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-info">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>نموذج تقرير رحلة عمل</td>
+                                                <td>DOCX</td>
+                                                <td>20/01/2025</td>
+                                                <td>0.6 MB</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-primary">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-info">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- نافذة رفع مستند جديد -->
+    <div class="modal fade" id="uploadDocumentModal" tabindex="-1" aria-labelledby="uploadDocumentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="uploadDocumentModalLabel">رفع مستند جديد</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form onsubmit="uploadDocument(event)">
+                        <div class="mb-3">
+                            <label for="document-title" class="form-label">عنوان المستند</label>
+                            <input type="text" class="form-control" id="document-title" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="document-type" class="form-label">نوع المستند</label>
+                            <select class="form-select" id="document-type" required>
+                                <option value="">اختر نوع المستند</option>
+                                <option value="personal">مستند شخصي</option>
+                                <option value="contract">عقد أو اتفاقية</option>
+                                <option value="other">أخرى</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="document-file" class="form-label">الملف</label>
+                            <input type="file" class="form-control" id="document-file" required>
+                            <div class="form-text">الحد الأقصى لحجم الملف: 10 ميجابايت. الصيغ المدعومة: PDF, DOCX, XLSX, JPG, PNG</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="document-description" class="form-label">وصف المستند (اختياري)</label>
+                            <textarea class="form-control" id="document-description" rows="3"></textarea>
+                        </div>
+                        <div class="text-end">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                            <button type="submit" class="btn btn-primary">رفع المستند</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- الذيل -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p>&copy; 2025 TEKFEN. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p>نظام TEKFEN للموارد البشرية</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
