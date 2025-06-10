@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>القائمة الجانبية | نظام إدارة الموارد البشرية TEKFEN</title>
+</head>
+<body>
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky pt-3">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link {{ 'active' if request.endpoint == 'main.index' else '' }}" href="{{ url_for('main.index') }}">
+                        <i class="fas fa-home"></i>
+                        الرئيسية
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ 'active' if request.endpoint.startswith('attendance.') else '' }}" href="{{ url_for('attendance.index') }}">
+                        <i class="fas fa-calendar-check"></i>
+                        الحضور والانصراف
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ 'active' if request.endpoint.startswith('leaves.') else '' }}" href="{{ url_for('leaves.index') }}">
+                        <i class="fas fa-umbrella-beach"></i>
+                        الإجازات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ 'active' if request.endpoint.startswith('permissions.') else '' }}" href="{{ url_for('permissions.index') }}">
+                        <i class="fas fa-clock"></i>
+                        الاستئذان
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ 'active' if request.endpoint.startswith('salary.') else '' }}" href="{{ url_for('salary.index') }}">
+                        <i class="fas fa-money-bill-wave"></i>
+                        الرواتب
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ 'active' if request.endpoint.startswith('complaints.') else '' }}" href="{{ url_for('complaints.index') }}">
+                        <i class="fas fa-comment-alt"></i>
+                        الشكاوى والاقتراحات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ 'active' if request.endpoint.startswith('documents.') else '' }}" href="{{ url_for('documents.index') }}">
+                        <i class="fas fa-file-alt"></i>
+                        المستندات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ 'active' if request.endpoint.startswith('training.') else '' }}" href="{{ url_for('training.index') }}">
+                        <i class="fas fa-graduation-cap"></i>
+                        التدريب والتطوير
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ 'active' if request.endpoint.startswith('messages.') else '' }}" href="{{ url_for('messages.index') }}">
+                        <i class="fas fa-envelope"></i>
+                        الرسائل
+                        {% if unread_messages_count > 0 %}
+                            <span class="badge bg-danger rounded-pill">{{ unread_messages_count }}</span>
+                        {% endif %}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ 'active' if request.endpoint.startswith('announcements.') else '' }}" href="{{ url_for('announcements.index') }}">
+                        <i class="fas fa-bullhorn"></i>
+                        الإعلانات
+                    </a>
+                </li>
+            </ul>
+
+            {% if current_user.is_admin() or current_user.is_supervisor() %}
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>لوحة الإدارة</span>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    {% if current_user.is_admin() %}
+                        <li class="nav-item">
+                            <a class="nav-link {{ 'active' if request.endpoint == 'admin.index' else '' }}" href="{{ url_for('admin.index') }}">
+                                <i class="fas fa-tachometer-alt"></i>
+                                لوحة التحكم الإدارية
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ 'active' if request.endpoint == 'admin.users' else '' }}" href="{{ url_for('admin.users') }}">
+                                <i class="fas fa-users"></i>
+                                إدارة المستخدمين
+                            </a>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link {{ 'active' if request.endpoint == 'admin.attendance' else '' }}" href="{{ url_for('admin.attendance') }}">
+                            <i class="fas fa-clipboard-list"></i>
+                            إدارة الحضور
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ 'active' if request.endpoint == 'admin.leaves' else '' }}" href="{{ url_for('admin.leaves') }}">
+                            <i class="fas fa-calendar-alt"></i>
+                            إدارة الإجازات
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ 'active' if request.endpoint == 'admin.reports' else '' }}" href="{{ url_for('admin.reports') }}">
+                            <i class="fas fa-chart-bar"></i>
+                            التقارير
+                        </a>
+                    </li>
+                </ul>
+            {% endif %}
+        </div>
+    </nav>
+</body>
+</html>

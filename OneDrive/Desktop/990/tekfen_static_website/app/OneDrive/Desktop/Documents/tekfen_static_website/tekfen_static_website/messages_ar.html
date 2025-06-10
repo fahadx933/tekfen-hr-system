@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المراسلات الداخلية | نظام TEKFEN للموارد البشرية</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index_ar.html">
+                <img src="images/tekfen.jpg" alt="TEKFEN Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index_ar.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="company_history_ar.html">تاريخ الشركة</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="attendanceDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الحضور والغياب
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="attendanceDropdown">
+                            <li><a class="dropdown-item" href="attendance_ar.html">سجل الحضور</a></li>
+                            <li><a class="dropdown-item" href="attendance_admin_ar.html">إدارة الحضور والغياب</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="leavesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الإجازات والاستئذان
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="leavesDropdown">
+                            <li><a class="dropdown-item" href="leaves_ar.html">طلبات الإجازة</a></li>
+                            <li><a class="dropdown-item" href="permissions_ar.html">طلبات الاستئذان</a></li>
+                            <li><a class="dropdown-item" href="leaves_admin_ar.html">إدارة طلبات الإجازة</a></li>
+                            <li><a class="dropdown-item" href="permissions_admin_ar.html">إدارة طلبات الاستئذان</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الخدمات
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="complaints_ar.html">الشكاوى والاقتراحات</a></li>
+                            <li><a class="dropdown-item" href="salary_certificate_ar.html">تعريف الراتب</a></li>
+                            <li><a class="dropdown-item" href="documents_ar.html">إدارة المستندات</a></li>
+                            <li><a class="dropdown-item" href="training_ar.html">التدريب والتطوير</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="announcements_ar.html">الإعلانات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="messages_ar.html">
+                            الرسائل
+                            <span class="badge bg-danger">3</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin_dashboard_ar.html">لوحة التحكم</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> <span id="user-name">اسم المستخدم</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="profile_ar.html">الملف الشخصي</a></li>
+                            <li><a class="dropdown-item" href="change_password_ar.html">تغيير كلمة المرور</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" onclick="logout()">تسجيل الخروج</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-globe"></i>
+                            العربية
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item active" href="#" onclick="changeLanguage('ar')">العربية</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="changeLanguage('en')">English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- المحتوى الرئيسي -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card">
+                    <div class="card-header">
+                        <h4><i class="bi bi-chat-left-text"></i> نظام المراسلات الداخلية</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <!-- قائمة جهات الاتصال والمحادثات -->
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="بحث عن موظف...">
+                                            <button class="btn btn-outline-secondary" type="button">
+                                                <i class="bi bi-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <div class="list-group list-group-flush">
+                                            <a href="#" class="list-group-item list-group-item-action active" onclick="showConversation(1)">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h6 class="mb-1">أحمد محمد</h6>
+                                                    <small>10:30 ص</small>
+                                                </div>
+                                                <p class="mb-1 text-truncate">مرحباً، هل يمكنك مراجعة التقرير الأسبوعي؟</p>
+                                                <span class="badge bg-danger">2</span>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action" onclick="showConversation(2)">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h6 class="mb-1">سارة أحمد</h6>
+                                                    <small>أمس</small>
+                                                </div>
+                                                <p class="mb-1 text-truncate">شكراً لك على المساعدة في المشروع</p>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action" onclick="showConversation(3)">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h6 class="mb-1">محمد علي</h6>
+                                                    <small>23/05</small>
+                                                </div>
+                                                <p class="mb-1 text-truncate">تم الانتهاء من المهمة المطلوبة</p>
+                                                <span class="badge bg-danger">1</span>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action" onclick="showConversation(4)">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h6 class="mb-1">فريق الموارد البشرية</h6>
+                                                    <small>20/05</small>
+                                                </div>
+                                                <p class="mb-1 text-truncate">إعلان: اجتماع الفريق غداً الساعة 10 صباحاً</p>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action" onclick="showConversation(5)">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h6 class="mb-1">خالد عبدالله</h6>
+                                                    <small>15/05</small>
+                                                </div>
+                                                <p class="mb-1 text-truncate">هل يمكننا مناقشة خطة المشروع الجديد؟</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#newMessageModal">
+                                            <i class="bi bi-plus-circle"></i> رسالة جديدة
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- عرض المحادثة -->
+                            <div class="col-md-8">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h5 class="mb-0">أحمد محمد</h5>
+                                                <small class="text-muted">متصل الآن</small>
+                                            </div>
+                                            <div>
+                                                <button class="btn btn-sm btn-outline-secondary me-1">
+                                                    <i class="bi bi-telephone"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-secondary">
+                                                    <i class="bi bi-three-dots-vertical"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body" style="height: 400px; overflow-y: auto;">
+                                        <div class="chat-messages">
+                                            <!-- رسائل المحادثة -->
+                                            <div class="message-other mb-3">
+                                                <div class="message-content">
+                                                    <div class="message-text">مرحباً، كيف حالك اليوم؟</div>
+                                                    <div class="message-time">09:15 ص</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="message-self mb-3">
+                                                <div class="message-content">
+                                                    <div class="message-text">مرحباً أحمد، أنا بخير والحمد لله. كيف حالك أنت؟</div>
+                                                    <div class="message-time">09:17 ص</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="message-other mb-3">
+                                                <div class="message-content">
+                                                    <div class="message-text">بخير، شكراً لسؤالك. هل يمكنك مراجعة التقرير الأسبوعي قبل تقديمه للإدارة؟</div>
+                                                    <div class="message-time">09:20 ص</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="message-other mb-3">
+                                                <div class="message-content">
+                                                    <div class="message-text">لقد أرسلته لك عبر البريد الإلكتروني منذ قليل.</div>
+                                                    <div class="message-time">09:21 ص</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="message-self mb-3">
+                                                <div class="message-content">
+                                                    <div class="message-text">نعم بالتأكيد، سأقوم بمراجعته اليوم وإرسال ملاحظاتي لك.</div>
+                                                    <div class="message-time">09:25 ص</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="message-other mb-3">
+                                                <div class="message-content">
+                                                    <div class="message-text">شكراً جزيلاً، أحتاج إلى تقديمه غداً صباحاً.</div>
+                                                    <div class="message-time">09:27 ص</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="message-other mb-3">
+                                                <div class="message-content">
+                                                    <div class="message-text">هل ستكون متاحاً للاجتماع اليوم بعد الظهر لمناقشة بعض النقاط؟</div>
+                                                    <div class="message-time">10:30 ص</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="input-group">
+                                            <button class="btn btn-outline-secondary" type="button">
+                                                <i class="bi bi-paperclip"></i>
+                                            </button>
+                                            <input type="text" class="form-control" placeholder="اكتب رسالتك هنا...">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="bi bi-send"></i> إرسال
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- نافذة رسالة جديدة -->
+    <div class="modal fade" id="newMessageModal" tabindex="-1" aria-labelledby="newMessageModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="newMessageModalLabel">رسالة جديدة</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient" class="form-label">المستلم</label>
+                            <select class="form-select" id="recipient" required>
+                                <option value="">اختر المستلم</option>
+                                <option value="1">أحمد محمد</option>
+                                <option value="2">سارة أحمد</option>
+                                <option value="3">محمد علي</option>
+                                <option value="4">فريق الموارد البشرية</option>
+                                <option value="5">خالد عبدالله</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-subject" class="form-label">الموضوع</label>
+                            <input type="text" class="form-control" id="message-subject">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="form-label">الرسالة</label>
+                            <textarea class="form-control" id="message-text" rows="5" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-attachment" class="form-label">المرفقات (اختياري)</label>
+                            <input type="file" class="form-control" id="message-attachment">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="alert('تم إرسال الرسالة بنجاح')">إرسال</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- الذيل -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p>&copy; 2025 TEKFEN. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p>نظام TEKFEN للموارد البشرية</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
