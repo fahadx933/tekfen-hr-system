@@ -1,0 +1,13 @@
+Flask==2.3.3
+Flask-SQLAlchemy==3.1.1
+Flask-Login==0.6.2
+Flask-WTF==1.1.1
+Flask-Migrate==4.0.4
+Flask-Babel==3.1.0
+Flask-Mail==0.9.1
+email-validator==2.1.0
+psycopg2-binary==2.9.9
+Werkzeug==2.3.7
+python-dotenv==1.0.1
+gunicorn==21.2.0
+gunicorn

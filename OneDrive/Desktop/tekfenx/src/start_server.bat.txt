@@ -1,0 +1,4 @@
+@echo off
+cd /d C:\Users\azozn\Desktop\990\tekfen_static_website
+waitress-serve --call --port=8000 stc:create_app
+pause
