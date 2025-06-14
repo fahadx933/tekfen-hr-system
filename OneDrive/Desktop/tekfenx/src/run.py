@@ -4,13 +4,13 @@
 # run.py - ملف التشغيل لمنصة Render
 
 import os
-from src import create_app, db
-from src.models.user import User, Role, Permission, Department
-from src.models.attendance import Attendance, LeaveType, Leave, PermissionRequest
-from src.models.salary import Salary, SalaryCertificate
-from src.models.document import Document
-from src.models.training import TrainingCourse, TrainingEnrollment
-from src.models.communication import Message, Announcement, Complaint, Log
+from . import create_app, db # هذا السطر صحيح بالفعل، استيراد نسبي من src/__init__.py
+from .models.user import User, Role, Permission, Department # تم التعديل إلى استيراد نسبي
+from .models.attendance import Attendance, LeaveType, Leave, PermissionRequest # تم التعديل إلى استيراد نسبي
+from .models.salary import Salary, SalaryCertificate # تم التعديل إلى استيراد نسبي
+from .models.document import Document # تم التعديل إلى استيراد نسبي
+from .models.training import TrainingCourse, TrainingEnrollment # تم التعديل إلى استيراد نسبي
+from .models.communication import Message, Announcement, Complaint, Log # تم التعديل إلى استيراد نسبي
 
 app = create_app(os.getenv('FLASK_CONFIG') or 'production')
 
